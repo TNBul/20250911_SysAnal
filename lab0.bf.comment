@@ -48,18 +48,14 @@ indexing from pairs start
             to after shmow [[>]>]
             >>
           ]<
-        BUGS COMMENCE FROM THIS POINT AFTER THE FIRST J ITERATION
+        BUGS COMMENCE FROM THIS POINT AFTER/ON THE FIRST J ITERATION
         SHOULD ACCOUNT FOR EMPTY/NONEMPTY SHMOW
-        to last row/shmow elem <<<
-        to first minus2/minus1 row element [<]<[<]
-        to last row elem >[<]>[>]<
+        <<[<]<
         [
           move elem right [->+<]
           to before row <[<]
 
-          to last row/shmow elem <<[>]>[>]<[>]<
-          to first minus2/minus1 row element [<]<[<]
-          to last row elem >[<]>[>]<
+          <<[<]<
         ]
         decrement j <-
       }
@@ -90,3 +86,17 @@ insert edge from j
         ]
         decrement j <-
       }
+###
+
+      to last row/shmow elem <<<
+        to first minus2/minus1 row element [<]<[<]
+        to last row elem >[<]>[>]<
+        [
+          move elem right [->+<]
+          to before row <[<]
+
+          to last row/shmow elem <<[>]>[>]<[>]<
+          to first minus2/minus1 row element [<]<[<]
+          to last row elem >[<]>[>]<
+        ]
+        decrement j <-
