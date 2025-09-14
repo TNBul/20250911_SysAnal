@@ -3,7 +3,7 @@ newline 010 >++[-<+++++>]
 zero 48 >>>++++[-<++++[-<+++<+++>>]>]<
 one 49 <+>
 comma 044 >++++[-<+++++++++++>]
->
+>#
 
 pairs setup ,[>,,assumes 1digit nums]
 to i >
@@ -19,10 +19,10 @@ to matrix >>>
   >+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<> >>>
   >+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<> >>>
   >+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<> >>>
-  >+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<> >>>
+  >+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<>>+++[<+++++++++++>-]<> >>>#
 to pairs start
   to i <<<<[[<]<<<]<<
-  <<[<]>
+  <<[<]>#
 
 indexing from pairs start
   {
@@ -38,37 +38,49 @@ indexing from pairs start
       to j >[>]>
         minus chr(0) ------------------------------------------------
       [>]<
-        minus chr(0) ------------------------------------------------
+        minus chr(0) ------------------------------------------------#
 
     insert edge from j
-      {
+      [
         to matrix end 
         >>>>>
           [
-            to after shmow [[>]>]
+            to after true row [>]
+            to after shmow >[>]
             >>
           ]<
-        BUGS COMMENCE FROM THIS POINT AFTER/ON THE FIRST J ITERATION
-        SHOULD ACCOUNT FOR EMPTY/NONEMPTY SHMOW
-        <<[<]<
+        BUGS SEMATARY
+        #<<[<]<#
         [
           move elem right [->+<]
-          to before row <[<]
+          to before row (is next row first) <[<]
 
           <<[<]<
         ]
         decrement j <-
+      ]<
+    insert edge from i
+      {
+        to true cols end
+        >>>>>
+        move last row twice
+        decrement i
       }
+    to matrix end
+    to first shmol
+    to row end
+    to shmow start
+    [-]+
+    restore order
   }
- THEN WE NEED TO GO TO THE LAST ROW ELEM OF I ROW AND CHANGE IT TO 1
 
 #############################################
 all: 0 charset 0 pairs 0 i j 0 matrix 0 shmatrix 0 0 0
 
 charset: C C C...
 pairs: 0... a b a b...; starts with 0 zeros
-matrix: 0 0 0 row row... ; 9x9 array
-row: a b c d... 0 shmow 0 0; shmow starts empty
+matrix: 0 0 0 row 0 0 row 0 0... ; 9x9 array
+row: a b c d... 0 shmow; shmow starts empty
 
 comments ###############
 
