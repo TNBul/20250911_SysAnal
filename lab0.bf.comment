@@ -18,15 +18,15 @@ to i >
 dummy matrix gen
 to matrix >>>
   >>> [dec 033 (exclamation): >+++[<+++++++++++>-]<]
-  + > + > + > + > + > + > + > + > + > >>>
-  + > + > + > + > + > + > + > + > + > >>>
-  + > + > + > + > + > + > + > + > + > >>>
-  + > + > + > + > + > + > + > + > + > >>>
-  + > + > + > + > + > + > + > + > + > >>>
-  + > + > + > + > + > + > + > + > + > >>>
-  + > + > + > + > + > + > + > + > + > >>>
-  + > + > + > + > + > + > + > + > + > >>>
-  + > + > + > + > + > + > + > + > + > >>>
+    +>+>+>+>+>+>+>+>+> >>>
+    +>+>+>+>+>+>+>+>+> >>>
+    +>+>+>+>+>+>+>+>+> >>>
+    +>+>+>+>+>+>+>+>+> >>>
+    +>+>+>+>+>+>+>+>+> >>>
+    +>+>+>+>+>+>+>+>+> >>>
+    +>+>+>+>+>+>+>+>+> >>>
+    +>+>+>+>+>+>+>+>+> >>>
+    +>+>+>+>+>+>+>+>+> >>>
 to pairs start
   to i <<<<[[<]<<<]<<
   <<[<]>
@@ -115,17 +115,10 @@ cut extra off
       [<<<-<->>] end in the middle if 1 end on the right if no 1
     >]
   <<<[<]
-  nip sensually (to demark) [<<<->>>]
+  nip sensually (to demark) [<<<->>>]>>>>
   nip repeatedly
     {
-      trim first elems [->[[-<+>]>]>>>]
-      <<<<<
-      move back and move rows left
-        [[< walk without rhythm instead mb?]>-
-          teleport on 1 {+smth-}
-        +]
-        move row left [[-<+>]>]
-        to next row
+      
     }
 print
 
@@ -151,3 +144,22 @@ I.E.:
 0    0    a    b    c-0< 0
 0    0    a    b+c  c-0< 0
 0    0    a    b+c< c-0  0
+
+ooooor?
+
+start: fix all, turn back, look for 1, start
+fix all: nip, move, from next fix all
+
+###
+
+nip repeatedly
+    {
+      trim first elems [->[[-<+>]>]>>>]
+      <<<<<
+      move back and move rows left
+        [[< walk without rhythm instead mb?]>-
+          teleport on 1 {+smth-}
+        +]
+        move row left [[-<+>]>]
+        to next row
+    }
