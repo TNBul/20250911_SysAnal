@@ -112,14 +112,35 @@ cut extra off
         break on non 1 and mend minus[+[>]]
         mend and continue +>
       ]>>
-      [<<<-<->>] end in the middle if 1 end on the right if no 1
+      [<<<->] end in the middle if 1 end on the right if no 1
     >]
   <<<[<]
-  nip sensually (to demark) [<<<->>>]>>>>
+  nip sensually (to demark) <<<-<-<->>>>>>
   nip repeatedly
-    {
-      
-    }
+    [
+      from start nip to end [[-]>[>]>>>]<<<<
+      [
+        move cur block left and add one more
+          [
+            move left [<]>[[-<+>]>]<<
+            go to next moved [<]<<
+          ]
+        check for terminator 5 gap 
+          <[>
+            to end >>>[[>]>>>]<<<
+          ]<
+      ]>>>>>
+      from start check for 1
+        [
+          -[+ 
+            teleport <<<<[[<]<<<]<<
+            nip <->
+          ]+
+          [>]>>>
+        ]<<<<
+        [[<]<<<]>>>>
+    ]
+move to end >>>>>[[>]>>>]<<<<
 print
 
 #############################################
@@ -162,4 +183,43 @@ nip repeatedly
         +]
         move row left [[-<+>]>]
         to next row
+    }
+
+###
+
+nip repeatedly
+    #{
+      (
+        nip [-]
+        move >[[-<+>]>]
+        >>>#
+      )
+      {
+        nip [-]
+        move first 
+          #>[
+            move left [-<+>]< CHECK MOVE ORDER DETERMINED BY GUARANTEED FIRST 001
+            check left 
+              <[
+                >[->>>+<<<]
+                >>>>#
+              ]>
+          #]<#
+        find non zero +[>[<-]<[->+<]>]>
+        move 
+          >[
+            [-<+>]<
+            <[>>
+              find non zero +[>[<-]<[->+<]>]> and step back<
+            ]>
+          ]
+        >>>
+      }<<<<#
+      [
+        [<]>
+        -{
+          teleport
+        }+
+        <<<<
+      ]
     }
